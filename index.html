@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/style.css" />
+    <title>CockTail DB</title>
+  </head>
+  <body class="bg-gray-100 text-gray-700">
+    <nav
+      class="bg-gradient-to-t to-gray-100 from-lime-500 flex justify-between drop-shadow-2xl shadow-slate-900 items-center py-7 px-4"
+    >
+      <img src="./public/logo.svg" alt="CockTail DB" class="w-3/6 lg:w-fit" />
+      <div>
+        <ul class="flex justify-between items-center text-gray-700 gap-3">
+          <li
+            class="hover:font-extrabold text-sm md:text-lg sm:text-base font-medium"
+          >
+            <a href="./index.html"> Home</a>
+          </li>
+          <li
+            class="hover:font-extrabold text-sm md:text-lg sm:text-base font-medium"
+          >
+            <a href="#"> About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <div
+        class="container mx-auto px-6 mt-9 mb-11 shadow-2xl py-9 pl-4 bg-white"
+      >
+        <form action="" method="post" class="form">
+          <label for="searchTerm" class="block container font-bold text-lg mb-1"
+            >Search</label
+          >
+          <input
+            type="text"
+            name="searchTerm"
+            id="searchTerm"
+            class="ring-2 ring-black input focus:ring-2 focus:ring-blue-300 focus-within:outline-none rounded block w-11/12 py-1 text-gray-600 px-3"
+          />
+        </form>
+      </div>
+
+      <div id="result-con"></div>
+      <div
+        class="mx-auto loader animate-spin border-[16px] border-solid border-white border-t-[16px] border-t-slate-600 rounded-full w-[120px] h-[120px]"
+        id="loader-gen"
+        hidden
+      ></div>
+      <div
+        id="results"
+        class="mx-auto container px-4 lg:grid lg:grid-cols-3 gap-x-10 gap-y-10"
+      ></div>
+      <div
+        class="pt-4 pb-9 h-screen md:h-screen w-full opacity-0 top-0 left-0 -z-10 target:transition-all target:duration-1000 target:opacity-100 target:z-10 bg-slate-400 bg-opacity-90 fixed"
+        id="lightbox"
+      >
+        <div
+          class="mx-auto loader animate-spin border-[16px] border-solid border-white border-t-[16px] border-t-slate-600 rounded-full w-[120px] h-[120px]"
+          id="loader_individual"
+        ></div>
+        <div
+          class="container mx-auto text-center"
+          id="display-result-container"
+        >
+          <a href="#">
+            <button
+              type="button"
+              class="md:py-2 absolute top-0 right-0 md:px-4 tracking-widest bg-slate-300 p-1 hover:bg-slate-300 hover:shadow-sm hover:shadow-slate-800 hover:text-white rounded-md mt-2"
+            >
+              BACK HOME
+            </button></a
+          >
+
+          <h2
+            class="mt-3 font-extrabold text-4xl tracking-widest cocktail-name"
+          ></h2>
+          <div
+            class="lg:mt-16 mt-3 lg:flex lg:justify-start lg:gap-x-20 lg:items-center"
+          >
+            <img
+              src="/my-projects/url-shortening-api-master/images/illustration-working.svg"
+              alt="CockTail Image with id "
+              class="pt-2 mx-auto lg:ml-4 lg:mx-0 mb-3 w-[60%] h-[60%] lg:h-96 lg:w-[50%] block img rounded-lg"
+            />
+
+            <div class="lg:text-left text-base md:text-xl mt-12 pb-6">
+              <h3 class="mb-3 font-bold">
+                <span
+                  class="bg-slate-300 font-bold text-slate-900 rounded px-2 py-1"
+                  >Name :</span
+                >&nbsp;&nbsp; <span class="text-name"></span>
+              </h3>
+              <h3 class="mb-3 font-bold">
+                <span class="bg-slate-300 text-slate-900 rounded px-2 py-1"
+                  >Category:</span
+                >&nbsp;&nbsp; <span class="category"></span>
+              </h3>
+              <h3 class="mb-3 font-bold">
+                <span class="bg-slate-300 text-slate-900 rounded px-2 py-1"
+                  >Info:</span
+                >&nbsp;&nbsp; <span class="info"></span>
+              </h3>
+              <h3 class="mb-3 font-bold">
+                <span class="bg-slate-300 text-slate-900 rounded px-2 py-1"
+                  >Glass:</span
+                >&nbsp; &nbsp; <span class="glass"></span>
+              </h3>
+              <h3 class="mb-3 font-bold">
+                <span class="bg-slate-300 text-slate-900 rounded px-2 py-1"
+                  >Instructions:</span
+                >&nbsp;&nbsp;
+                <span class="instructions"></span>
+              </h3>
+              <h3 class="mb-3 font-bold">
+                <span class="bg-slate-300 text-slate-900 rounded px-2 py-1"
+                  >Ingredients:</span
+                >&nbsp;&nbsp; <span class="ingredients"></span>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="./public/index.js"></script>
+</html>
